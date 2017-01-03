@@ -1,0 +1,11 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '0.2-SNAPSHOT'
+
+uploadArchives {
+    uploadDescriptor = false
+    repositories {
+        flatDir(dirs: 'C:/dat/librepo')
+    }
+}
