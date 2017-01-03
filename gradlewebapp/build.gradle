@@ -1,0 +1,10 @@
+apply plugin: 'jetty' // war
+apply plugin: 'eclipse'
+
+dependencies {
+	compile 'com.github.ricksbrown:cowsay:1.+'
+}
+
+repositories {
+	mavenCentral()
+}
