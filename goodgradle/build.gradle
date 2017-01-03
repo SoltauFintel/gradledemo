@@ -1,0 +1,69 @@
+apply plugin: 'application'
+apply plugin: 'eclipse'
+//apply plugin: 'checkstyle' // auskommentiert, da Checkstyle nicht erfolgreich ist
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+apply plugin: 'jdepend'
+apply plugin: 'jacoco'
+
+mainClassName = 'tw.HelloGoodGradle'
+build.dependsOn installDist
+
+dependencies {
+	compile 'com.github.ricksbrown:cowsay:1.+'
+
+	testCompile 'junit:junit:4.12'
+}
+
+repositories {
+	mavenCentral()
+}
+
+jar {
+	manifest.attributes 'Copyright': getYear() + ' Teamware'
+
+	from 'build.gradle'
+	from 'build.xml'
+}
+def getYear() {
+	return Calendar.getInstance().get(Calendar.YEAR)
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from javadoc.destinationDir
+}
+artifacts {
+	archives sourcesJar
+	archives javadocJar
+}
+
+tasks.withType(FindBugs) {
+	reports {
+		xml.enabled false
+		html.enabled true
+	}
+	ignoreFailures = true
+}
+
+tasks.withType(JDepend) {
+	reports {
+		xml.enabled false
+		text.enabled true
+	}
+}
+
+jacoco {
+	toolVersion = '0.7.6.201602180812'
+}
+jacocoTestReport {
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.destination "${buildDir}/jacocoHtml"
+	}
+}

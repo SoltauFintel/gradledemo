@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<project name="goodgradle" basedir="." default="build">
+
+	<target name="build">
+		<gradle task="build"/>
+	</target>
+	<target name="build mit jacoco">
+		<gradle task="build jacocoTestReport"/>
+	</target>
+	<target name="buildanalyse">
+		<gradle task="--stacktrace build"/>
+	</target>
+	<target name="clean+build">
+		<gradle task="clean build"/>
+	</target>
+	<target name="eclipse">
+		<gradle task="eclipse"/>
+	</target>
+
+	<macrodef name="gradle">
+		<attribute name="task"/>
+		<sequential>
+	        <exec executable="cmd" failonerror="true">
+	        	<arg line="/c gradlew.bat -g C:\jarcache\gradle @{task}"/>
+	        </exec>
+		</sequential>
+	</macrodef>
+	
+</project>
