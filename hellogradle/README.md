@@ -17,4 +17,4 @@ Folgende Dateien dienen als Kopiervorlage für gradlebasierte Javaprojekte:
 * gradlew
 * gradlew.bat
 
-Eine [Gradle Installation](https://docs.gradle.org/current/userguide/installation.html) muss nicht durchgeführt werden, da man obige Dateien als Ausgangslage verwenden kann. build.gradle und build.xml müssen angepasst werden.
+Eine [Gradle Installation](https://docs.gradle.org/current/userguide/installation.html) muss *nicht* durchgeführt werden, da man obige Dateien als Ausgangslage verwenden kann. build.gradle und build.xml müssen angepasst werden.
