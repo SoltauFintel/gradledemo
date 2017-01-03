@@ -1,6 +1,6 @@
 apply plugin: 'application'
 apply plugin: 'eclipse'
-//apply plugin: 'checkstyle' // auskommentiert, da Checkstyle nicht erfolgreich ist
+apply plugin: 'checkstyle' // auskommentiert, da Checkstyle nicht erfolgreich ist
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'jdepend'
@@ -27,6 +27,19 @@ jar {
 }
 def getYear() {
 	return Calendar.getInstance().get(Calendar.YEAR)
+}
+
+task findeFixme {
+	doLast {
+		def alleJavaDateien = fileTree('src/main') { include '**/*.java' }
+		def messages = ''
+		alleJavaDateien.each { File file ->
+			 if (file.text.contains('FIXME'))
+				  messages += " - $file.name contains FIXME !\n"
+		}
+		if (messages != '')
+			 throw new GradleException(messages)
+	}
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

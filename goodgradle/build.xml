@@ -2,16 +2,10 @@
 <project name="goodgradle" basedir="." default="build">
 
 	<target name="build">
-		<gradle task="build"/>
+		<gradle task="build -x checkstyleMain -x checkstyleTest"/>
 	</target>
-	<target name="build mit jacoco">
-		<gradle task="build jacocoTestReport"/>
-	</target>
-	<target name="buildanalyse">
-		<gradle task="--stacktrace build"/>
-	</target>
-	<target name="clean+build">
-		<gradle task="clean build"/>
+	<target name="full build">
+		<gradle task="clean findeFixme build jacocoTestReport"/>
 	</target>
 	<target name="eclipse">
 		<gradle task="eclipse"/>

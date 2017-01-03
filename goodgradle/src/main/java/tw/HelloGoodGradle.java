@@ -20,6 +20,7 @@ public class HelloGoodGradle {
 		try {
 			return Cowsay.think(new String[] { "Hello good Gradle !" });
 		} catch (Exception e) {
+			// FIXME Exception behandeln
 		}
 		return null;
 	}
