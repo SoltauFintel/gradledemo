@@ -1,7 +1,8 @@
-apply plugin: 'java'
+apply plugin: 'application'
 apply plugin: 'eclipse'
 
-jar.manifest.attributes 'main-class': 'tw.HelloGradle'
+mainClassName = 'tw.HelloGradle'
+build.dependsOn installDist
 
 dependencies {
 	compile 'com.github.ricksbrown:cowsay:1.+'

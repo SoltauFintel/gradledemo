@@ -2,7 +2,7 @@
 
     apply plugin: 'java'
 
-... baut eine einfache Java-Anwendung (JAR), die eine Meldung aus der Console ausgibt.
+... baut eine einfache Java-Anwendung (JAR), die eine Meldung auf der Console ausgibt.
 
 Eclipse-Dateien werden mit eingecheckt, da die Eclipse-Konfigurationsdateien in diesem einfachen Beispiel noch nicht mit Gradle erzeugt werden.
 
