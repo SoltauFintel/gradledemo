@@ -3,7 +3,8 @@
     apply plugin: 'war'
     apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
-... baut eine Java-Webanwendung (WAR), die mittels CowSay eine Meldung im Web ausgibt. Als Servletcontainer wird Jetty verwendet.
+... baut eine Java-Webanwendung (WAR), die eine CowSay-Meldung im Web ausgibt. Als Servletcontainer wird Jetty 9 verwendet. Alternativ
+können folgende Servletcontainer verwendet werden: Jetty 7 - 9, Tomcat 7 - 8.
 
 **Start:** DOS-Box öffnen und "run" eingeben. Danach im Browser http://localhost:8080/gradlewebapp aufrufen.
 Jetty wird in der DOS-Box mit der Enter-Taste beendet.
