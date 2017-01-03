@@ -1,10 +1,3 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-
 dependencies {
 	compile 'com.github.ricksbrown:cowsay:1.+'
-}
-
-repositories {
-	mavenCentral()
 }

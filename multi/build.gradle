@@ -1,5 +1,14 @@
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	
+	repositories {
+		mavenCentral()
+		flatDir dirs: 'C:/dat/librepo'
+	}
+}
+
 apply plugin: 'application'
-apply plugin: 'eclipse'
 
 mainClassName = 'tw.MultiApp'
 build.dependsOn installDist
@@ -7,9 +16,4 @@ build.dependsOn installDist
 dependencies {
 	compile ':multilib:0.2-SNAPSHOT'
 	compile project(':multi2')
-}
-
-repositories {
-	mavenCentral()
-	flatDir dirs: 'C:/dat/librepo'
 }
