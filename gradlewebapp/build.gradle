@@ -1,10 +1,16 @@
-apply plugin: 'jetty' // war
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 apply plugin: 'eclipse'
 
 dependencies {
-	compile 'com.github.ricksbrown:cowsay:1.+'
+	testCompile 'junit:junit:4.12'
 }
 
 repositories {
 	mavenCentral()
+}
+
+gretty {
+	// supported values: 'jetty7', 'jetty8', 'jetty9', 'tomcat7', 'tomcat8'
+	//servletContainer = 'tomcat7'
 }
