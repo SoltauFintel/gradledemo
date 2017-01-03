@@ -1,4 +1,4 @@
-# Gradle Beispiel 6: Multi-Project-Build
+# Gradle Beispiel 6: Multi-Project-Build 
 
     settings.gradle
 
