@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+		
+dependencies {
+	compile 'com.github.ricksbrown:cowsay:1.+'
+}
+
+repositories {
+	mavenCentral()
+}
+
+task fatJar(type: Jar) {
+	with jar
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	manifest.attributes 'main-class': 'tw.HelloFatJar'
+}
+
+sourceSets.main.java.srcDir 'src'
