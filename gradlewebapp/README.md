@@ -1,7 +1,7 @@
 # Gradle Beispiel 4: WAR
 
     apply plugin: 'war'
-    apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+    apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty-1.4.0.plugin'
 
 ... baut eine Java-Webanwendung (WAR), die eine CowSay-Meldung im Web ausgibt. Als Servletcontainer wird Jetty 9 verwendet. Alternativ
 können folgende Servletcontainer verwendet werden: Jetty 7 - 9, Tomcat 7 - 8.
@@ -11,6 +11,8 @@ Jetty wird in der DOS-Box mit der Enter-Taste beendet.
 
 Die Eclipse-Dateien wurden nicht eingecheckt. Durch Ausführung von Target "eclipse" der Ant-Datei build.xml werden die Eclipse-Dateien erstellt.
 
-Hot Deployment funktioniert.
+Hot Deployment funktioniert! :-)
 
 [Gretty Doku](http://akhikhl.github.io/gretty-doc)
+ || [Gretty auf github](https://github.com/akhikhl/gretty)
+ || [Gretty Ankündigung auf jaxenter](https://jaxenter.de/gretty-1092)
