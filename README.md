@@ -1,4 +1,4 @@
-# Java-Projekte für Gradle Präsentation
+# Java Projekte für Gradle Präsentation
 
 Weitere READMEs sind in den top-level-Ordnern.
 
