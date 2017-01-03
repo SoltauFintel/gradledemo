@@ -1,0 +1,3 @@
+apply plugin: 'java'
+
+jar.manifest.attributes 'main-class': 'tw.HelloGradle'
