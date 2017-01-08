@@ -8,3 +8,4 @@ Weitere READMEs sind in den top-level-Ordnern.
 4. **gradlewebapp**: WAR + Gretty Plugin, Servletcontainer Jetty oder Tomcat konfigurierbar
 5. **goodgradle**: JavaDoc-, Sources-JAR, Quality Check
 6. **multi, multi2, multilib**: Multi-Project-Build
+7. **reli, reli2**: Auslieferung
