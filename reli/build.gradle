@@ -1,0 +1,53 @@
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+
+	repositories {
+		mavenCentral()
+	}
+	
+	uploadArchives {
+		uploadDescriptor = false
+		repositories {
+			flatDir(dirs: 'C:/dat/librepo')
+		}
+	}
+}
+
+apply plugin: 'application'
+
+mainClassName = 'tw.ReliApp'
+build.dependsOn installDist
+
+dependencies {
+	compile project(':reli2')
+}
+
+jar {
+	println "Version: $version"
+}
+
+// gradlew clean check uA auslieferung -Pversion=2.0.0
+task auslieferung(type: Copy) {
+	dependsOn build
+	// Auslieferungsordner bereitstellen
+	def ordner = "C:/dat/auslieferung/$version"
+	from "${buildDir}/distributions/reli-${version}.zip"
+	into ordner
+	
+	doFirst {
+		if (!version.contains('SNAPSHOT')) {
+			git("tag $version")
+		}
+	}
+	doLast {
+		println "# Auslieferungsordner erstellt: $ordner"
+	}
+}
+auslieferung.enabled = (version.contains('.'))
+
+def git(def op) {
+	def cmd = "git $op"
+	println "> $cmd"
+	//println cmd.execute().text
+}
