@@ -1,1 +1,1 @@
-gradlew.bat -g C:\jarcache\gradle appRun
+gradlew.bat -g C:\jarcache\gradle appRunDebug
